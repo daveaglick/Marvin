@@ -4,6 +4,7 @@
 To add Marvin to a project:
 
 - Add a git submodule in the build directory: `git submodule add https://github.com/daveaglick/Marvin.git build`.
+- Add the `build` directory to the root `.gitignore` file (otherwise all the Marvin files will also get committed to the parent repository).
 - Create a `marvin.cmd` file in the root of the containing repository:
   ```
   @echo off
