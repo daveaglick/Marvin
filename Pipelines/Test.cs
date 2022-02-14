@@ -24,7 +24,6 @@ namespace Marvin.Pipelines
             ProcessModules = new ModuleList
             {
                 new ReadFiles(_projectSet.RootPath.Combine(_projectSet.TestProjects).FullPath),
-                /*
                 new ExecuteConfig(Config.FromContext(context =>
                     new StartProcess("dotnet")
                         .WithArgument("test")
@@ -34,7 +33,6 @@ namespace Marvin.Pipelines
                         .WithArgument(Config.FromDocument(doc => doc.Source.FullPath), true)
                         .WithParallelExecution(false)
                         .LogOutput()))
-                */
             };
         }
 
