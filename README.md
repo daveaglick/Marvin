@@ -1,14 +1,14 @@
 # Marvin
 [Marvin is a robot](https://en.wikipedia.org/wiki/Marvin_the_Paranoid_Android) that helps Dave with mundane jobs like building projects and publishing releases. It's pretty customized to Dave's specific working environment and project layout but maybe you'll find parts of it helpful too.
 
-## Add Marvin to a project
+## Adding Marvin
 
-- Add a git submodule in the build directory: `git submodule add https://github.com/daveaglick/Marvin.git build`.
-- Add the `build` directory to the root `.gitignore` file (otherwise all the Marvin files will also get committed to the parent repository).
+- Add a git submodule in the `marvin` directory: `git submodule add https://github.com/daveaglick/Marvin.git marvin`.
+- Add the `marvin` directory to the root `.gitignore` file (otherwise all the Marvin files will also get committed to the parent repository).
 - Create a `marvin.cmd` file in the root of the containing repository:
   ```
   @echo off
-  cd "build"
+  cd "marvin"
   dotnet run -- %*
   set exitcode=%errorlevel%
   cd %~dp0
@@ -26,9 +26,10 @@
   NuGetApiKey: => GetString("DAVEAGLICK_NUGET_API_KEY")
   ```
 - Add the Marvin project to the solution (optional but recommended if making changes directly to Marvin).
-- Add a version control mapping for the build folder to Rider (Settings -> Version Control -> Directory Mappings) and change the Git and Commit toolboxes to group by repository (optional but recommended if making changes directly to Marvin).
+- Add a version control mapping for the `marvin` folder to Rider (Settings -> Version Control -> Directory Mappings) and change the Git and Commit toolboxes to group by repository (optional but recommended if making changes directly to Marvin).
 
-## Use Marvin
+## Using Marvin
 
+Use the `marvin.cmd` command added above:
 - `marvin`: builds, tests, and packs the project(s).
 - `marvin deploy`: builds, tests, packs, and publishes the project(s).
