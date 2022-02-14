@@ -23,7 +23,7 @@
       GitHubOwner: "daveaglick"
       GitHubName: "Buildalyzer"
   GitHubToken: => GITHUB_TOKEN
-  NuGetApiKey: => DAVEAGLICK_NUGET_API_KEY
+  NuGetApiKey: => NUGET_API_KEY
   ```
 - Add the Marvin project to the solution (optional but recommended if making changes directly to Marvin).
 - Add a version control mapping for the build folder to Rider (Settings -> Version Control -> Directory Mappings) and change the Git and Commit toolboxes to group by repository (optional but recommended if making changes directly to Marvin).
