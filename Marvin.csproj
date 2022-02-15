@@ -10,4 +10,16 @@
       <PackageReference Include="Octokit" Version="0.46.0" />
       <PackageReference Include="Statiq.App" Version="1.0.0-beta.56" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="copy\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="copy\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="copy\**" />
+    </ItemGroup>
 </Project>

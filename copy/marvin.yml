@@ -1,0 +1,8 @@
+ProjectSets:
+  - Name: ProjectName
+    SourceProjects: "src/*/*.csproj"
+    TestProjects: "tests/*/*.csproj"
+    GitHubOwner: "daveaglick"
+    GitHubName: "ProjectName"
+GitHubToken: => GetString("GITHUB_TOKEN")
+NuGetApiKey: => GetString("DAVEAGLICK_NUGET_API_KEY")
