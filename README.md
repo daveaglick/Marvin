@@ -25,8 +25,7 @@
   GitHubToken: => GetString("GITHUB_TOKEN")
   NuGetApiKey: => GetString("DAVEAGLICK_NUGET_API_KEY")
   ```
-- Add the Marvin project to the solution (optional but recommended if making changes directly to Marvin).
-- Add a version control mapping for the `marvin` folder to Rider (Settings -> Version Control -> Directory Mappings) and change the Git and Commit toolboxes to group by repository (optional but recommended if making changes directly to Marvin).
+- Add a version control mapping for the `marvin` folder to Rider (Settings -> Version Control -> Directory Mappings) and change the Git and Commit toolboxes to group by repository.
 
 ## Using Marvin
 
