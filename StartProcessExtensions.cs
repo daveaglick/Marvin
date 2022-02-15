@@ -19,7 +19,7 @@ public static class StartProcessExtensions
         foreach (ProjectSet project in context.Settings.GetProjectSets())
         {
             startProcess = startProcess.WithArgument(Config.FromContext(ctx =>
-                $"-p:{project.Name}Version=\"{ctx.Outputs.FromPipeline(nameof(GetVersions))[0].GetString(project.Name)}\""));
+                $"-p:{project.Name.Replace(".", string.Empty)}Version=\"{ctx.Outputs.FromPipeline(nameof(GetVersions))[0].GetString(project.Name)}\""));
         }
 
         return startProcess;
