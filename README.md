@@ -21,3 +21,4 @@
 Use the `marvin.cmd` command added above:
 - `marvin`: builds, tests, and packs the project(s).
 - `marvin deploy`: builds, tests, packs, and publishes the project(s).
+- `marvin addlabels -s GitHubOwner=owner -s GitHubName=name`: adds default labels to the GitHub project (but will not delete any existing ones).

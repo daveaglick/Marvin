@@ -28,6 +28,7 @@ public class Program
                 settings[Keys.CleanMode] = CleanMode.Full;
             })
             .AddPipeline<Pipelines.GetVersions>()
+            .AddPipeline<Pipelines.AddLabels>()
             .AddPipelines((settings, pipelines) =>
             {
                 foreach (ProjectSet projectSet in settings.GetProjectSets())
