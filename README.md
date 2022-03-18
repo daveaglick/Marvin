@@ -15,6 +15,7 @@
 - Copy the `copy/.editorconfig` file to the repository root.
 - Copy the `copy/tests/.editorconfig` file to the `tests` directory.
 - Copy the files from `copy/workflows` to `.github/workflows`.
+- Copy the `FUNDING.yml` file to `.github`.
 
 ## Using Marvin
 
