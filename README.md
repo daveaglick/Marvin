@@ -12,10 +12,13 @@
 - Copy the `copy/marvin.cmd` file to the root of the repository.
 - Copy the `copy/marvin.yml` file to the root of the repository and replace `ProjectName` placeholders.
 - Copy the `copy/Directory.Build.props` file to the root of the repository and replace `ProjectName` placeholders (pay attention to settings further down in the file like `PackageProjectUrl`). Delete any obsolete elements from existing `.csproj` files that are covered in the common `Directory.Build.props`.
+- Add a `icon.png` to the root of the repository (or remove those entries from the `Directory.Build.props` file).
+- Add a `<Description>` element to either the common `Directory.Build.props` file or each `.csproj` file.
 - Copy the `copy/.editorconfig` file to the repository root.
 - Copy the `copy/tests/.editorconfig` file to the `tests` directory.
 - Copy the files from `copy/workflows` to `.github/workflows`.
 - Copy the `FUNDING.yml` file to `.github`.
+- Copy a valid `davidglick.pfx` file from one of the existing repositories to the root of the repository (this file should not be checked in).
 
 ## Using Marvin
 

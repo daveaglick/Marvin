@@ -1,11 +1,14 @@
 <Project>
   <PropertyGroup>
     <Version Condition="'$(ProjectNameVersion)' == ''">1.0.0</Version>
-    <Version Condition="'$(ProjectNameVersion)' != ''">$(MsBuildPipeLoggerVersion)</Version>
+    <Version Condition="'$(ProjectNameVersion)' != ''">$(ProjectNameVersion)</Version>
     <AssemblyVersion>$(Version.Split('-')[0])</AssemblyVersion>
     <FileVersion>$(Version.Split('-')[0])</FileVersion>
     <Authors>Dave Glick and contributors</Authors>
     <Company>Dave Glick and contributors</Company>
+    <Description>Description, or remove if adding to the project files directly.</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://ProjectName.netlify.com/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/daveaglick/ProjectName.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -20,6 +23,11 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\LICENSE.md" Pack="true" PackagePath=""/>
+    <None Include="$(MSBuildThisFileDirectory)\icon.png" Pack="true" PackagePath="\"/>
+    <None Include="$(MSBuildThisFileDirectory)\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All"/>
