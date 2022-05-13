@@ -4,7 +4,7 @@
 ## Adding Marvin
 
 - Add a git submodule in the `marvin` directory: `git submodule add https://github.com/daveaglick/Marvin.git marvin`.
-- Add the `marvin` directory to the root `.gitignore` file (otherwise all the Marvin files will also get committed to the parent repository).
+- Add the `marvin` and `cache` directories to the root `.gitignore` file (otherwise all the Marvin files and it's build cache will also get committed to the parent repository).
 
 ## Other Things To Do
 
