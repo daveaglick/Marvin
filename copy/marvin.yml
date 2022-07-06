@@ -6,3 +6,4 @@ ProjectSets:
     GitHubName: "ProjectName"
 GitHubToken: => GetString("GITHUB_TOKEN")
 NuGetApiKey: => GetString("DAVEAGLICK_NUGET_API_KEY")
+CopyPackagesTo: "C:\Code\PackageSource"

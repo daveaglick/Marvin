@@ -11,13 +11,13 @@ namespace Marvin.Pipelines
         {
             _projectSet = projectSet.ThrowIfNull(nameof(projectSet));
 
-            Dependencies.Add($"{nameof(Test)}{projectSet.Name}");
+            Dependencies.Add($"{nameof(Test)}-{projectSet.Name}");
 
             if (projectSet.ProjectSetDependencies is object)
             {
                 foreach (string dependency in projectSet.ProjectSetDependencies)
                 {
-                    Dependencies.Add($"{nameof(Pack)}{dependency}");
+                    Dependencies.Add($"{nameof(Pack)}-{dependency}");
                 }
             }
 
@@ -46,9 +46,16 @@ namespace Marvin.Pipelines
                     .WithParallelExecution(false)
                     .HideArguments(true)
                     .LogOutput()
+                    .KeepContent(),
+                new ExecuteIf(
+                    Config.ContainsSettings(nameof(Settings.CopyPackagesTo)),
+                    new SetDestination(Config.FromDocument((doc, ctx) =>
+                        NormalizedPath.Combine(ctx.GetPath(nameof(Settings.CopyPackagesTo)), doc.Source.FileName))),
+                    new LogMessage(Config.FromDocument(doc => $"Writing package to {doc.Destination.FullPath}")),
+                    new WriteFiles())
             };
         }
 
-        public string PipelineName => $"{nameof(Pack)}{_projectSet.Name}";
+        public string PipelineName => $"{nameof(Pack)}-{_projectSet.Name}";
     }
 }

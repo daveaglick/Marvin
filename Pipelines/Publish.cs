@@ -18,13 +18,13 @@ namespace Marvin.Pipelines
             // Don't publish unless told to (I.e. during deployment as a dependency of the corresponding DeployXyz pipeline)
             ExecutionPolicy = ExecutionPolicy.Manual;
 
-            Dependencies.Add($"{nameof(Pack)}{projectSet.Name}");
+            Dependencies.Add($"{nameof(Pack)}-{projectSet.Name}");
 
             if (projectSet.ProjectSetDependencies is object)
             {
                 foreach (string dependency in projectSet.ProjectSetDependencies)
                 {
-                    Dependencies.Add($"{nameof(Publish)}{dependency}");
+                    Dependencies.Add($"{nameof(Publish)}-{dependency}");
                 }
             }
 
@@ -78,6 +78,6 @@ namespace Marvin.Pipelines
             };
         }
 
-        public string PipelineName => $"{nameof(Publish)}{_projectSet.Name}";
+        public string PipelineName => $"{nameof(Publish)}-{_projectSet.Name}";
     }
 }

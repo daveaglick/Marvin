@@ -14,9 +14,9 @@ namespace Marvin.Pipelines
 
             Deployment = true;
 
-            Dependencies.Add($"{nameof(Publish)}{projectSet.Name}");
+            Dependencies.Add($"{nameof(Publish)}-{projectSet.Name}");
         }
 
-        public string PipelineName => $"{nameof(Deploy)}{_projectSet.Name}";
+        public string PipelineName => $"{nameof(Deploy)}-{_projectSet.Name}";
     }
 }

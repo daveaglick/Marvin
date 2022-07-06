@@ -11,13 +11,13 @@ namespace Marvin.Pipelines
         {
             _projectSet = projectSet.ThrowIfNull(nameof(projectSet));
 
-            Dependencies.Add($"{nameof(Build)}{projectSet.Name}");
+            Dependencies.Add($"{nameof(Build)}-{projectSet.Name}");
 
             if (projectSet.ProjectSetDependencies is object)
             {
                 foreach (string dependency in projectSet.ProjectSetDependencies)
                 {
-                    Dependencies.Add($"{nameof(Test)}{dependency}");
+                    Dependencies.Add($"{nameof(Test)}-{dependency}");
                 }
             }
 
@@ -36,6 +36,6 @@ namespace Marvin.Pipelines
             };
         }
 
-        public string PipelineName => $"{nameof(Test)}{_projectSet.Name}";
+        public string PipelineName => $"{nameof(Test)}-{_projectSet.Name}";
     }
 }

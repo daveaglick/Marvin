@@ -23,7 +23,7 @@ namespace Marvin.Pipelines
             {
                 foreach (string dependency in projectSet.ProjectSetDependencies)
                 {
-                    Dependencies.Add($"{nameof(Build)}{dependency}");
+                    Dependencies.Add($"{nameof(Build)}-{dependency}");
                 }
             }
 
@@ -56,6 +56,6 @@ namespace Marvin.Pipelines
             };
         }
 
-        public string PipelineName => $"{nameof(Build)}{_projectSet.Name}";
+        public string PipelineName => $"{nameof(Build)}-{_projectSet.Name}";
     }
 }
