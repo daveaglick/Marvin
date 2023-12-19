@@ -30,6 +30,7 @@ namespace Marvin.Pipelines
                         .WithArgument("pack")
                         .WithArgument("--no-build")
                         .WithArgument("--no-restore")
+                        .WithArgument("--configuration Debug") // See https://learn.microsoft.com/en-us/dotnet/core/compatibility/sdk/8.0/dotnet-pack-config
                         .WithVersions(context)
                         .WithArgument("-o", Config.FromContext(ctx => ctx.FileSystem.GetOutputPath(projectSet.Name).FullPath), true)
                         .WithArgument(Config.FromDocument(doc => doc.Source.FullPath), true)
